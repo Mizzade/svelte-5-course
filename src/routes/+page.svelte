@@ -1,2 +1,7 @@
-<h1>Welcome to Svelte 5</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import Header from './Header.svelte';
+
+  let name = "Scott"
+</script>
+
+<Header {name} />
