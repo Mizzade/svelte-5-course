@@ -9,12 +9,11 @@
 	});
 </script>
 
+<Header name={formState.name} />
+
 <main>
 	<p>Step: {formState.step + 1}</p>
 
-	{#if formState.error}
-		<p class="error">{formState.error}</p>
-	{/if}
 	{#if formState.step === 0}
 		<div>
 			<label for="name">Your Name</label>
@@ -46,4 +45,14 @@
 			}}>Next</button
 		>
 	{/if}
+
+	{#if formState.error}
+		<p class="error">{formState.error}</p>
+	{/if}
 </main>
+
+<style>
+	.error {
+		color: red;
+	}
+</style>
