@@ -1,7 +1,13 @@
 <script lang="ts">
-	let { name }: { name: string } = $props();
+	let {
+		name
+	}: {
+		name: string;
+	} = $props();
 </script>
 
-<h1>
-	{name ? name : 'User'}'s Form
-</h1>
+<div>
+	<h1>
+		{name ? name : 'User'}'s Form
+	</h1>
+</div>
