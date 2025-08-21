@@ -64,8 +64,9 @@
 	{#each QUESTIONS as { id, type, question }, index (id)}
 		{#if formState.step === index}
 			<div
-			in:fly={{ x: 200, duration: 200, opacity: 0, delay: 200}}
-			out:fly={{ x: -200, duration: 200, opacity: 0}}>
+				in:fly={{ x: 200, duration: 200, opacity: 0, delay: 200 }}
+				out:fly={{ x: -200, duration: 200, opacity: 0 }}
+			>
 				{@render formStep({ question, id, type })}
 			</div>
 		{/if}
