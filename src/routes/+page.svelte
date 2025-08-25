@@ -23,6 +23,29 @@
 			formState.error = 'Please fill out the form input';
 		}
 	}
+
+	// Runs on mount
+	$effect(() => {
+		console.log('on mounted');
+
+		return () => {
+			// when unmounted or destroyed.
+			// before effect re-runs
+			console.log('on unmounted');
+		};
+	});
+
+	$effect(() => {
+		// Will re-run when formState.step has changed
+		console.log('formState', formState.step);
+
+		// DON'T create state based off other state, in effect.
+		// Use #derived()
+		return () => {
+			// before effect re-runs
+			console.log('before formState re-runs', formState.step);
+		};
+	});
 </script>
 
 <Header name={formState.answers.name} />
