@@ -9,6 +9,8 @@
 		error: ''
 	});
 
+	$inspect(formState.step);
+
 	const QUESTIONS = [
 		{ question: "What's your name?", id: 'name', type: 'text' },
 		{ question: "What's your birthday?", id: 'birthday', type: 'date' },
@@ -31,19 +33,19 @@
 		return () => {
 			// when unmounted or destroyed.
 			// before effect re-runs
-			console.log('on unmounted');
+			// console.log('on unmounted');
 		};
 	});
 
 	$effect(() => {
 		// Will re-run when formState.step has changed
-		console.log('formState', formState.step);
+		// console.log('formState', formState.step);
 
 		// DON'T create state based off other state, in effect.
 		// Use #derived()
 		return () => {
 			// before effect re-runs
-			console.log('before formState re-runs', formState.step);
+			// console.log('before formState re-runs', formState.step);
 		};
 	});
 </script>
